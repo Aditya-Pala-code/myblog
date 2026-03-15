@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'about.css' %}">
+
+<header>
+    <h1>About Us</h1>
+</header>
+
+<div class="container">
+    <div class="about-content">
+        <p>Welcome to our blog! This site is created to share knowledge and ideas.</p>
+        <p>Our mission is to provide quality content for readers.</p>
+        <p>At [Your Company/Blog], we are passionate about delivering high-quality content and solutions that inspire, educate, and empower our audience. Founded with a vision to bridge the gap between creativity and technology, we combine expertise, innovation, and integrity in everything we do. Our mission is to provide valuable insights, practical guidance, and meaningful experiences that help our users achieve their goals. We are committed to excellence, continuous learning, and building lasting relationships with our community.</p>
+    </div>
+</div>
+
+{% endblock %}

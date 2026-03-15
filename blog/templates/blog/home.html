@@ -1,0 +1,39 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "Home.css" %}">
+<!-- Introduction Section -->
+<div class="intro">
+<p>
+Welcome to my blog! Here, I share articles about technology,
+coding, and interesting projects. Feel free to explore the posts
+below and learn something new!
+</p>
+</div>
+
+<div class="container">
+
+{% for post in blogs %}
+
+<a href="{% url 'post_detail' post.id %}" class="card-link">
+
+<div class="post-card">
+
+<h2>{{ post.title }}</h2>
+
+<small>{{ post.created_at|date:"F j, Y" }}</small>
+
+</div>
+
+</a>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

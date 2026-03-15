@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}My Blog{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static "base.css" %}">
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+     <div class="nav-container">
+
+        <h1 class="logo">Aditya Blog</h1>
+
+<nav>
+
+<ul class="nav-links">
+
+<li><a href="/">Home</a></li>
+
+<li><a href="{% url "blog" %}">Blogs</a></li>
+
+<li><a href="{% url 'about' %}">About</a></li>
+
+<li><a href="{% url "contact" %}">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+    <!-- PAGE CONTENT -->
+
+    {% block content %}base {% endblock %}
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>About Blog</h3>
+          <p>
+            This blog shares articles about technology, programming, and
+            interesting projects to help developers learn and grow.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url "about" %}">About</a></li>
+            <li><a href="{% url "contact" %}">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📞 Phone: +91 9501873889</p>
+          <p>📧 Email: pala338710@gmail.com</p>
+          <p>💬 WhatsApp: +91 9501873889</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Me</h3>
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© {{ year }} My Simple Blog | Developed by Aditya</p>
+      </div>
+    </footer>
+  </body>
+</html>
