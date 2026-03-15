@@ -3,6 +3,15 @@ from .models import Post
 from datetime import datetime
 from .forms import ContactForm
 
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_admin(request):
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser("Adityapal5751", "pala338710@gmail.com", "Adityapal5751")
+        return HttpResponse("Admin created")
+    return HttpResponse("Admin already exists")
+
 def home(request):
     blogs = Post.objects.all()
     return render(request, "blog/home.html", {
