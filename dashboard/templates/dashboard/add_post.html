@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Post</title>
+    <link rel="stylesheet" href="{% static 'dashboard/post.css' %}">
+</head>
+<body>
+    <h2>Add New Blog Post</h2>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Post</button>
+    </form>
+    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+</body>
+</html>

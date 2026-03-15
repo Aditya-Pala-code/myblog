@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
+    
